@@ -35,43 +35,58 @@ window.onload = () => {
 displayCalendar = (currentMonth, currentYear) => {
   daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
   const degree = 360 / daysInMonth;
-  const cal = document.querySelector('#cal');
-  cal.innerHTML = " ";
+  const calendar = document.querySelector("#calendar");
+  calendar.innerHTML = "";
 
   const arcRangeEnd = Math.floor(Math.random() * (daysInMonth + 1));
   const arcRangeStart = Math.floor(Math.random() * (arcRangeEnd + 1));
 
   document.querySelector(".month").innerHTML =
-    `<span>${months[currentMonth]}</span>`
+    `<span>
+      ${months[currentMonth]}, ${currentYear}
+    </span>`;
 
   for(let i=1; i <= daysInMonth; i++) {
-    const currentDay = new Date(currentYear, currentMonth, i).getDay();
-    const calendar = document.createElement("div");
-    calendar.classList.add("calendar");
-    calendar.innerHTML =
+    const currentDate = new Date(currentYear, currentMonth, i);
+    const currentDay = currentDate.getDay();
+
+    const calendarElement = document.createElement("div");
+    calendarElement.classList.add("calendar__element");
+
+    calendarElement.innerHTML =
       `<span
-        class="arc" 
+        class="calendar__arc" 
         style="
-          display: ${ i >= arcRangeStart && i <= arcRangeEnd ? 'block' : 'none'};
+          display: ${i >= arcRangeStart && i <= arcRangeEnd ? "block" : "none"};
           transform-origin: bottom center;
           transform: rotate(${degree * i}deg);
         "
       >
       </span>
       <div
-        class = "calendar-wrapper"
+        class="calendar__date"
         style=
           "transform-origin: bottom center;
           transform: rotate(${degree * i}deg);"
         >
-          <span style="font-weight: ${currentDay === 0 || currentDay === 6 ? '600' : '400'}">
+          <span style="
+              color: ${currentDate.toDateString() === date.toDateString() ? "#4285F3" : "#000"};
+              font-weight:
+                ${currentDay === 0 || currentDay === 6 || currentDate.toDateString() === date.toDateString() ? "600" : "400"}
+            "
+          >
             ${i}
           </span>
-          <span style="font-weight: ${currentDay === 0 || currentDay === 6 ? '600' : '400'}">
+          <span style="
+              color: ${currentDate.toDateString() === date.toDateString() ? "#4285F3" : "#000"};
+              font-weight:
+                ${currentDay === 0 || currentDay === 6 || currentDate.toDateString() === date.toDateString()? '600' : '400'}
+            "
+          >
             ${days[currentDay]}
           </span>
       </div>`;
-    cal.appendChild(calendar);
+    calendar.appendChild(calendarElement);
   }
 }
 

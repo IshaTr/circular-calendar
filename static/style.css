@@ -14,7 +14,7 @@ body {
   padding-top: 10px;
 }
 
-.calendar-wrapper {
+.calendar__date {
   font-size: 14px;
   height: 220px;
   text-align: center; 
@@ -22,11 +22,12 @@ body {
   width: 20px;
   left: 50%;
   top: 10%;
+  color: #666;
 }
 
-.arc {
+.calendar__arc {
   font-size: 16px;
-  border-top: 1px solid #000;
+  border-top: 1px solid rgb(51, 182, 121);
   height: 168px;
   position: absolute;
   width: 39.75px;
