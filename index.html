@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600" rel="stylesheet">
+    <title>Calendar</title>
+  </head>
+
+  <body>
+    <div>
+      <h3 class="month"></h3>
+      <div class="button-wrapper">
+        <button onClick="decrementMonth()">
+          <i class="fa fa-arrow-alt-circle-left"></i>
+        </button>
+        <button onClick="incrementMonth()">
+          <i class="fa fa-arrow-alt-circle-right"></i>
+        </button>
+      </div>
+      <div id="cal"></div>  
+    </div>
+
+    <script src="./static/index.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </body>
+</html>
