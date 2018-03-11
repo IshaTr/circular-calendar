@@ -53,6 +53,7 @@ button {
   font-size: 36px;
   cursor: pointer;
   transition: .02s ease-in-out all;
+  color: #777;
 }
 
 button:focus {
@@ -60,7 +61,7 @@ button:focus {
 }
 
 button:hover {
-  color: #444;
+  color: #000;
 }
 
 @media all and (max-width: 420px) {
@@ -72,15 +73,22 @@ button:hover {
   }
 
   .calendar__arc {
-    left: 47%;
-    top: 26.5%;
+    left: 48%;
+    top: 26%;
     height: 100px;
-    width: 24px;
+    width: 23px;
   }
 
   .button-wrapper {
     align-items: flex-start;
     justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 320px) {
+  calendar__arc {
+    left: 48%;
+    top: 27.25%;
   }
 }
 
