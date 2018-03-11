@@ -62,3 +62,45 @@ button:focus {
 button:hover {
   color: #444;
 }
+
+@media all and (max-width: 420px) {
+  .calendar__date {
+    height: 145px;
+    left: 48%;
+    top: 20%;
+    font-size: 11px;
+  }
+
+  .calendar__arc {
+    left: 47%;
+    top: 26.5%;
+    height: 100px;
+    width: 24px;
+  }
+
+  .button-wrapper {
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+
+@media all and (min-width: 421px) and (max-width: 767px) {
+  .calendar__date {
+    height: 180px;
+    left: 48%;
+    top: 20%;
+    font-size: 12px;
+  }
+
+  .calendar__arc {
+    left: 47.5%;
+    top: 25.5%;
+    height: 140px;
+    width: 30px;
+  }
+
+  .button-wrapper {
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
